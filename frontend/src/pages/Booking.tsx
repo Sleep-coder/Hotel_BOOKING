@@ -55,7 +55,7 @@ const Booking = () => {
   }
 
   return (
-    <div className="grid md:grid-cols-[1fr_2fr]">
+    <div className="grid md:grid-cols-[1fr_2fr] gap-2">
       <BookingDetailsSummary
         checkIn={search.checkIn}
         checkOut={search.checkOut}
@@ -69,7 +69,8 @@ const Booking = () => {
           stripe={stripePromise}
           options={{
             clientSecret: paymentIntentData.clientSecret,
-          }}>
+          }}
+        >
           <BookingForm
             currentUser={currentUser}
             paymentIntent={paymentIntentData}
